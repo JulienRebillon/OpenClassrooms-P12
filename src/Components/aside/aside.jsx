@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import './aside.css';
 
-function Aside
+const Aside = () => {
+    return (
+        <div>
+
+        </div>
+    );
+};
+
+
 
 export default Aside;

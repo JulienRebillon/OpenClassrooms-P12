@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './/index.css';
+import './index.css';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     errorElement: <Error />
   },
   {
-    path: 'user/:id',
+    path: 'profile/:id',
     element: <Profile />,
     errorElement: <Error />
   },
