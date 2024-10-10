@@ -6,6 +6,7 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import Home from './Pages/home/home';
+import Profile from './Pages/profile/profile';
 import Error from './Pages/error/error';
 
 
@@ -16,7 +17,11 @@ const router = createBrowserRouter([
     element: <Home />,
     errorElement: <Error />
   },
-  
+  {
+    path: 'user/:id',
+    element: <Profile />,
+    errorElement: <Error />
+  },
   
 ]);
 
