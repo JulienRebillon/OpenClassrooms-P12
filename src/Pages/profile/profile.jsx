@@ -16,7 +16,7 @@ const Profile = () => {
 
                 <div className="sideBar_container">
 
-                    <sideBar />
+                    <SideBar />
 
                 </div>
 
