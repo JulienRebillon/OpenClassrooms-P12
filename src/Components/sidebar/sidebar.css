@@ -1,0 +1,15 @@
+.sidebar_icons {
+    background-color: red;
+}
+
+.sideBar_container p {
+    position: absolute;
+    font-size: 13px;
+    margin: 0;
+    width: 250px;
+    
+    bottom: 170px;
+    left: -70px;
+    color: white;
+    transform: rotate(270deg);
+}

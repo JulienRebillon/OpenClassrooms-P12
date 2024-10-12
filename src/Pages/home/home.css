@@ -1,0 +1,18 @@
+h1 {
+    margin-left: 20px;
+}
+
+button {
+    margin: 20px;
+    height: 80px;
+    width: 200px;
+    border-radius: 15px;
+    font-size: 24px;
+    color: white;
+    background-color: black;
+    box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, .2);
+}
+
+.header__nav {
+    display: none;
+}

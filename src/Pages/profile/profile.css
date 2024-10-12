@@ -1,0 +1,12 @@
+.header__nav {
+    display: block;
+}
+
+.sideBar_container {
+    height: 950px;
+    width: 117px;
+    background-color: black;
+    position: relative;
+    display: flex;
+}
+
