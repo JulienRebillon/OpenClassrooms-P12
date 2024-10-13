@@ -1,0 +1,43 @@
+.mainChart_content {
+    width: 100%;
+    height: 100%;
+    background-color: #fbfbfb;
+    position: relative;
+}
+
+.mainChart_content h2 {
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.mainLegend {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+   
+}
+
+.mainDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-left: 15px;
+}
+
+.redDot {
+    background-color: red;
+}
+
+.blackDot {
+    background-color: black;
+}
+
+
+.mainLegend p {
+    margin-top: 0;
+    font-size: 14px;
+    color: #74798c;
+    margin-left: 10px;
+}

@@ -1,0 +1,100 @@
+'use client';
+
+// import { fetchUserData,
+//          fetchUserActivity,
+//          fetchUserAverageSessions,
+//          fetchUserPerformance } from '../Data/api';
+
+import React, { useState } from "react";
+import { Bar, 
+    BarChart, 
+    CartesianGrid, 
+    Legend, 
+    ResponsiveContainer, 
+    Tooltip, 
+    XAxis, 
+    YAxis } from 'recharts';
+import './mainChart.css';
+
+
+
+const fakeData2 = [
+    {
+        "userId": 12,
+        "sessions": [
+            {
+                "day": 1,
+                "kilogram": 80,
+                "calories": 240
+            },
+            {
+                "day": 2,
+                "kilogram": 80,
+                "calories": 220
+            },
+            {
+                "day": 3,
+                "kilogram": 81,
+                "calories": 280
+            },
+            {
+                "day": 4,
+                "kilogram": 81,
+                "calories": 290
+            },
+            {
+                "day": 5,
+                "kilogram": 80,
+                "calories": 160
+            },
+            {
+                "day": 6,
+                "kilogram": 78,
+                "calories": 162
+            },
+            {
+                "day": 7,
+                "kilogram": 76,
+                "calories": 390
+            }
+        ]
+    } 
+]
+
+
+
+
+const MainChart = () => {
+
+    return (
+        <div className="mainChart_content">
+            <h2>Activité quotidienne</h2>
+
+            {/* <ResponsiveContainer height="100%" width="100%" >
+                <BarChart data={this.props.data}
+                    barGap={8}
+                    margin={{top: 100, right: 40, left: 40, bottom: 40}}>
+                        <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                        <XAxis dataKey="day" />
+                        <YAxis yAxisId="kilogram" />
+                        <YAxis yAxisId="calories" hide={true} />
+                       
+                        
+                    </BarChart>
+                </ResponsiveContainer> */}
+
+            <div className="mainLegend">
+                <div className="blackDot mainDot"></div>
+                <p>Poids(kg) </p>
+                <div className="redDot mainDot"></div>
+                <p>Calories brûlées (kCal)  </p>
+            </div>
+
+
+
+        </div>
+    );
+};
+
+
+export default MainChart;

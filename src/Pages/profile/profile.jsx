@@ -6,6 +6,7 @@ import Aside from "../../Components/aside/aside"
 
 import Header from "../../Components/header/header";
 import Welcome from "../../Components/welcome/welcome";
+import MainChart from "../../Components/mainChart/mainChart";
 import Graphs from "../../Components/graphs/graphs";
 
 
@@ -33,6 +34,8 @@ const Profile = () => {
 
 
                     <div className="mainChart_container">
+
+                        <MainChart />
 
                     </div>
 
