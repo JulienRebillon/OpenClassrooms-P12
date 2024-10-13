@@ -39,6 +39,7 @@ const Profile = () => {
                 </div>
 
                 <aside className="aside_container">
+                    
 
                 </aside>
 
