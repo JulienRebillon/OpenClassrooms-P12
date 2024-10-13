@@ -1,0 +1,17 @@
+.welcome_content {
+    height: 100%;
+    width: 100%;
+    background-color: #fbfbfb;
+}
+
+h1 {
+    margin-left: 0;
+}
+
+.welcome_content span {
+    color: red;
+}
+
+.welcome_content p {
+    display: flex;
+}

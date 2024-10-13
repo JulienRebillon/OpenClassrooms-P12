@@ -17,7 +17,6 @@ main {
     margin-top: 70px;
     height: 780px;
     width: 892px;
-    background-color: lightskyblue;
     display: flex;
     flex-direction: column;
 }
@@ -27,11 +26,9 @@ main {
     margin-left: 30px;
     width: 258px;
     height: 570px;
-    background-color: lightcoral;
 }
 
 .welcome_container {
-    background-color: blue;
     width: 100%;
     height: 210px;
 }

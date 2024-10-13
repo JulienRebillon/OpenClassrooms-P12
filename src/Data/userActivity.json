@@ -18,9 +18,9 @@
                 "calories": 280
             },
             {
-                day: '2020-07-04',
-                kilogram: 81,
-                calories: 290
+                "day": "2020-07-04",
+                "kilogram": 81,
+                "calories": 290
             },
             {
                 day: '2020-07-05',

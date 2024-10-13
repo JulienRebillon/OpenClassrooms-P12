@@ -2,8 +2,10 @@ import React from "react";
 import './profile.css';
 
 import SideBar from "../../Components/sidebar/sidebar"
+import Aside from "../../Components/aside/aside"
 
 import Header from "../../Components/header/header";
+import Welcome from "../../Components/welcome/welcome";
 
 
 
@@ -24,6 +26,7 @@ const Profile = () => {
 
                     <div className="welcome_container">
 
+                        <Welcome />
 
                     </div>
 
@@ -40,6 +43,7 @@ const Profile = () => {
 
                 <aside className="aside_container">
                     
+                    <Aside />
 
                 </aside>
 

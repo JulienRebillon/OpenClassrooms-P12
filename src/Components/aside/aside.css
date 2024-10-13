@@ -1,0 +1,39 @@
+.aside_content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.aside_card {
+    padding: 32px;
+    display: flex;
+    background-color: #FBFBFB;
+
+}
+
+.aside_card p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.aside_card img {
+    width: 60px;
+    height: 60px;
+}
+
+.aside_desc {
+    margin-left: 20px;
+}
+
+.aside_desc_Value {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.aside_desc_Unit {
+    margin-top: 3px;
+    font-size: 16px;
+    color: #74798C;
+}
