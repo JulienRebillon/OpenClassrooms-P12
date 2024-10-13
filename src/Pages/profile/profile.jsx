@@ -6,6 +6,7 @@ import Aside from "../../Components/aside/aside"
 
 import Header from "../../Components/header/header";
 import Welcome from "../../Components/welcome/welcome";
+import Graphs from "../../Components/graphs/graphs";
 
 
 
@@ -36,6 +37,8 @@ const Profile = () => {
                     </div>
 
                     <div className="charts_container">
+
+                        <Graphs />
 
                     </div>
 

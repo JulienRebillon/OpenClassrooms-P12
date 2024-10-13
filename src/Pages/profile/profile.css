@@ -43,5 +43,4 @@ main {
 .charts_container {
     display: flex;
     height: 263px;
-    background-color: blue;
 }
