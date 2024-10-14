@@ -61,6 +61,8 @@ const fakeData = [
     }
 ];
 
+const sessionData = fakeData[0].sessions;
+
 
 const fakeData3 = [
     {
@@ -100,13 +102,12 @@ const Graphs = () => {
 
             <div className="miniGraph" id="graph1">
                 <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={fakeData}
+                    <LineChart data={sessionData}
                         margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
                         <XAxis dataKey="day" />
-                        <YAxis dataKey="sessionLength"/>
-                        
+                        <YAxis hide={true} domain={[0, (max) => max * 1.33]} dataKey="sessionLength"/>
                         <Tooltip />
-                        
+                        <Line type="monotone" dataKey="sessionLength" stroke="white" strokeWidth={2} dot={{ r: 5 }} />
                     </LineChart>
                 </ResponsiveContainer>
             </div>
@@ -118,12 +119,14 @@ const Graphs = () => {
 
 
             <div className="miniGraph" id="graph2">
-                <RadarChart outerRadius={120} width={400} height={400} data={fakeData3}>
-                    <PolarGrid />
-                    <PolarAngleAxis dataKey="kind" />
-                    <PolarRadiusAxis angle={30} domain={[0, 200]} />
-                    <Radar name="data" dataKey="value" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
-                </RadarChart>
+                <ResponsiveContainer width="100%" height="100%">
+                    <RadarChart outerRadius={120} width={400} height={400} data={fakeData3}>
+                        <PolarGrid />
+                        <PolarAngleAxis dataKey="kind" />
+                        <PolarRadiusAxis angle={30} domain={[0, 200]} />
+                        <Radar name="data" dataKey="value" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
+                    </RadarChart>
+                </ResponsiveContainer>
             </div>
 
 

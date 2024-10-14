@@ -64,37 +64,30 @@ const fakeData2 = [
 
 
 
-const MainChart = () => {
-
+const MainChart = ({ data = fakeData2[0].sessions }) => {
     return (
         <div className="mainChart_content">
             <h2>Activité quotidienne</h2>
 
-            {/* <ResponsiveContainer height="100%" width="100%" >
-                <BarChart data={this.props.data}
-                    barGap={8}
-                    margin={{top: 100, right: 40, left: 40, bottom: 40}}>
-                        <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                        <XAxis dataKey="day" />
-                        <YAxis yAxisId="kilogram" />
-                        <YAxis yAxisId="calories" hide={true} />
-                       
-                        
-                    </BarChart>
-                </ResponsiveContainer> */}
+            <ResponsiveContainer height="100%" width="100%">
+                <BarChart data={data} barGap={8} margin={{ top: 100, right: 40, left: 40, bottom: 40 }}>
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                    <XAxis dataKey="day" />
+                    <YAxis yAxisId="kilogram" />
+                    <YAxis yAxisId="calories" hide={true} />
+                    <Bar yAxisId="kilogram" dataKey="kilogram" fill="#000000" />
+                    <Bar yAxisId="calories" dataKey="calories" fill="#FF0101" />
+                </BarChart>
+            </ResponsiveContainer>
 
             <div className="mainLegend">
                 <div className="blackDot mainDot"></div>
-                <p>Poids(kg) </p>
+                <p>Poids(kg)</p>
                 <div className="redDot mainDot"></div>
-                <p>Calories brûlées (kCal)  </p>
+                <p>Calories brûlées (kCal)</p>
             </div>
-
-
-
         </div>
     );
 };
-
 
 export default MainChart;
