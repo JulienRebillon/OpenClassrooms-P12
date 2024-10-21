@@ -63,6 +63,19 @@ const fakeData2 = [
 
 
 
+function CustomTooltip({ active, payload }) {
+    if (active && payload) {
+        return (
+            <div className="barChartWrapper_tooltip">
+                <p>{`${payload[0].value}Kg`}</p>
+                <p>{`${payload[1].value}kCal`}</p>
+            </div>
+        );
+    }
+
+    return null;
+}
+
 
 const MainChart = ({ data = fakeData2[0].sessions }) => {
     return (
@@ -70,13 +83,14 @@ const MainChart = ({ data = fakeData2[0].sessions }) => {
             <h2>Activité quotidienne</h2>
 
             <ResponsiveContainer height="100%" width="100%">
-                <BarChart data={data} barGap={8} margin={{ top: 100, right: 40, left: 40, bottom: 40 }}>
+                <BarChart data={data} barGap={8} margin={{ top: 40, right: 40, left: 40, bottom: 40 }}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} />
                     <XAxis dataKey="day" />
-                    <YAxis yAxisId="kilogram" />
-                    <YAxis yAxisId="calories" hide={true} />
-                    <Bar yAxisId="kilogram" dataKey="kilogram" fill="#000000" barSize={15} Radius={10}/>
-                    <Bar yAxisId="calories" dataKey="calories" fill="#FF0101" barSize={15} Radius={10}/>
+                    <YAxis yAxisId="kilogram" orientation="right"/>
+                    <YAxis yAxisId="calories" orientation="right" hide={true} />
+                    <Tooltip content={<CustomTooltip />} cursor={{ fill: "rgba(0, 0, 0, 0.1)" }} />
+                    <Bar yAxisId="kilogram" dataKey="kilogram" fill="#000000" barSize={15} radius={[10, 10, 0, 0]}/>
+                    <Bar yAxisId="calories" dataKey="calories" fill="#FF0101" barSize={15} radius={[10, 10, 0, 0]}/>
                 </BarChart>
             </ResponsiveContainer>
 

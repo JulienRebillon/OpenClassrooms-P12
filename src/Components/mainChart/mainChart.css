@@ -41,3 +41,27 @@
     color: #74798c;
     margin-left: 10px;
 }
+
+.barChartWrapper {
+    border-radius: 0.5em;
+}
+
+.barChartWrapper_tooltip {
+    background-color: red;
+    color: white;
+    text-align: center;
+    margin-left: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.barChartWrapper_tooltip p {
+    padding: 5px 15px;
+    font-size: 12px;
+}
+
+.recharts-bar-rectangle{
+    
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
