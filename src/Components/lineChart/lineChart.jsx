@@ -9,19 +9,12 @@ import React, { useState } from "react";
 import {
     Line,
     LineChart,
-    RadarChart,
-    PolarGrid,
-    PolarAngleAxis,
-    PolarRadiusAxis,
-    Radar,
-    Pie,
-    PieChart,
     ResponsiveContainer,
     Tooltip,
     XAxis,
     YAxis,
   } from "recharts";
-import './graphs.css';
+import './lineChart.css';
 
 
 
@@ -90,10 +83,29 @@ const fakeData3 = [
       kind: "intensity"
     }
   ];
+
+
+  const fakeData4 = [
+    {
+        "id": "12",
+        "userInfos": {
+            "firstName": "Karl",
+            "lastName": "Dovineau",
+            "age": 31
+        },
+        "todayScore": 0.12,
+        "keyData": {
+            "calorieCount": 1930,
+            "proteinCount": 155,
+            "carbohydrateCount": 290,
+            "lipidCount": 50
+        }
+    },
+]
   
 
 
-const Graphs = () => {
+const SimpleLineChart = () => {
 
 
 
@@ -113,49 +125,8 @@ const Graphs = () => {
             </div>
 
 
-
-
-
-
-
-            <div className="miniGraph" id="graph2">
-                <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart outerRadius={120} width={400} height={400} data={fakeData3}>
-                        <PolarGrid />
-                        <PolarAngleAxis dataKey="kind" />
-                        <PolarRadiusAxis angle={30} domain={[0, 200]} />
-                        <Radar name="data" dataKey="value" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
-                    </RadarChart>
-                </ResponsiveContainer>
-            </div>
-
-
-
-
-
-
-
-            <div className="miniGraph" id="graph3">
-                <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-
-                        <Pie data={fakeData}
-                            margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
-                            <XAxis dataKey="day" />
-                            <YAxis dataKey="sessionLength"/>
-                            
-                            <Tooltip />
-                            
-                        </Pie>
-
-                    </PieChart>
-                </ResponsiveContainer>
-
-            </div>
-
-
         </div>
     );
 };
 
-export default Graphs;
+export default SimpleLineChart;

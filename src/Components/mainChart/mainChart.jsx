@@ -75,8 +75,8 @@ const MainChart = ({ data = fakeData2[0].sessions }) => {
                     <XAxis dataKey="day" />
                     <YAxis yAxisId="kilogram" />
                     <YAxis yAxisId="calories" hide={true} />
-                    <Bar yAxisId="kilogram" dataKey="kilogram" fill="#000000" />
-                    <Bar yAxisId="calories" dataKey="calories" fill="#FF0101" />
+                    <Bar yAxisId="kilogram" dataKey="kilogram" fill="#000000" barSize={15} Radius={10}/>
+                    <Bar yAxisId="calories" dataKey="calories" fill="#FF0101" barSize={15} Radius={10}/>
                 </BarChart>
             </ResponsiveContainer>
 

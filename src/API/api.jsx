@@ -1,16 +1,34 @@
-fetch('../Data/userMainData.json')
-    .then(res => {
-        if (res.ok) {
-            console.log('Fetch success');
-            return res.json();  // Parse the response as JSON
-        } else {
-            console.log('Fetch failure');
-        }
-    })
-    .then(data => {
-        console.log('Fetched Data:', data);  // Log the actual data
-    })
-    .catch(error => console.log('ERROR TEST FETCH', error));
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+// Example of making a GET request
+axios.get('http://localhost:3000')
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
+
+
+// fetch('../Data/userMainData.json')
+//     .then(res => {
+//         if (res.ok) {
+//             console.log('Fetch success');
+//             return res.json();  // Parse the response as JSON
+//         } else {
+//             console.log('Fetch failure');
+//         }
+//     })
+//     .then(data => {
+//         console.log('Fetched Data:', data);  // Log the actual data
+//     })
+//     .catch(error => console.log('ERROR TEST FETCH', error));
+
+
+
+
 
 
 

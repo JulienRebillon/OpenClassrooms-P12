@@ -4,22 +4,12 @@
     justify-content: space-between;
 }
 
-/* .miniGraph {
-    height: 253px;
-    width: 268px;
-} */
 
-#graph1 {
-    background-color: red;
-}
 
 #graph2 {
     background-color: black;
 }
 
-#graph3 {
-    background-color: #fbfbfb;
-}
 
 .recharts-polar-angle-axis-ticks {
     font-size: 14px;
@@ -27,6 +17,6 @@
 }
 
 .miniGraph {
-    width: 268px !important;
-    height: 253px !important;
+    width: 268px;
+    height: 253px;
 }

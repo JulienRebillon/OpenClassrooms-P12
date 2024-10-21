@@ -1,0 +1,20 @@
+.graphs_content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#graph1 {
+    background-color: red;
+}
+
+
+.recharts-polar-angle-axis-ticks {
+    font-size: 14px;
+    color: white;
+}
+
+.miniGraph {
+    width: 268px;
+    height: 253px;
+}
