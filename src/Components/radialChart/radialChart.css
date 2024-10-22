@@ -17,4 +17,17 @@
 .miniGraph {
     width: 268px;
     height: 253px;
+    position: relative;
+}
+
+.radialChart_legend {
+    position: absolute;
+    z-index: 999;
+    text-align: center;
+    top: 50%;
+    left: 37%;
+    color: #282D30;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
 }

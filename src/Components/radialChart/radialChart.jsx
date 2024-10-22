@@ -18,74 +18,6 @@ import {
 import './radialChart.css';
 
 
-
-const fakeData = [
-    {
-        "userId": 12,
-        "sessions": [
-            {
-                "day": 1,
-                "sessionLength": 30
-            },
-            {
-                "day": 2,
-                "sessionLength": 23
-            },
-            {
-                "day": 3,
-                "sessionLength": 45
-            },
-            {
-                "day": 4,
-                "sessionLength": 50
-            },
-            {
-                "day": 5,
-                "sessionLength": 0
-            },
-            {
-                "day": 6,
-                "sessionLength": 0
-            },
-            {
-                "day": 7,
-                "sessionLength": 60
-            }
-        ]
-    }
-];
-
-const sessionData = fakeData[0].sessions;
-
-
-const fakeData3 = [
-    {
-      value: 80,
-      kind: "cardio"
-    },
-    {
-      value: 120,
-      kind: "energy"
-    },
-    {
-      value: 140,
-      kind: "endurance"
-    },
-    {
-      value: 50,
-      kind: "strength"
-    },
-    {
-      value: 200,
-      kind: "speed"
-    },
-    {
-      value: 90,
-      kind: "intensity"
-    }
-  ];
-
-
   const fakeData4 = [
     {
         "id": "12",
@@ -121,10 +53,10 @@ const SimpleRadialChart = () => {
                     outerRadius="90%" // Adjust the outer radius to control the size
                     barSize={15} // Thickness of the bars
                     data={[
-                        { name: 'Score', value: fakeData4[0].todayScore * 100 }, // User score (12%)
+                        { name: 'Score', value: fakeData4[0].todayScore * 100 }, // User score
                     ]}
                     startAngle={90} // Starting angle for the bars
-                    endAngle={450} // End angle (360 degrees + 90 to complete the circle)
+                    endAngle={90 + (fakeData4[0].todayScore * 360)} // End angle based on todayScore
                     >
                     <RadialBar
                         minAngle={15}
@@ -136,15 +68,19 @@ const SimpleRadialChart = () => {
                     <Tooltip />
                     <text
                         x="50%" 
-                        y="50%"
+                        y="45%"
                         textAnchor="middle"
                         dominantBaseline="middle"
                         className="progress-label"
-                        style={{ fontSize: '24px', fontWeight: 'bold' }}>
+                        style={{ fontSize: '28px', fontWeight: 'bold' }}>
                         {`${fakeData4[0].todayScore * 100}%`}
                     </text>
                     </RadialBarChart>
                 </ResponsiveContainer>
+                <div className="radialChart_legend">
+                        <span>de votre</span>
+                        <span>objectif</span>
+                </div>
             </div>
 
 
