@@ -19,11 +19,6 @@ import './radarChart.css';
 
 
 
-
-
-
-
-
 const fakeData3 = [
     {
       value: 80,
@@ -52,27 +47,51 @@ const fakeData3 = [
   ];
 
 
+const kindTranslations = {
+    cardio: "Cardio",
+    energy: "Énergie",
+    endurance: "Endurance",
+    strength: "Force",
+    speed: "Vitesse",
+    intensity: "Intensité",
+};
+
+// Rearranging the data in counter-clockwise order
+const reorderedData = [
+    fakeData3[5], // intensity
+    fakeData3[4], // speed
+    fakeData3[3], // strength
+    fakeData3[2], // endurance
+    fakeData3[1], // energy
+    fakeData3[0]  // cardio
+];
 
 
 
 const SimpleRadarChart = () => {
-
-
-
     return (
         <div className="graphs_content">
-
             <div className="miniGraph" id="graph2">
                 <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart outerRadius={100} width={400} height={400} data={fakeData3}>
-                        <PolarGrid />
-                        <PolarAngleAxis dataKey="kind" />
-                        <PolarRadiusAxis angle={30} domain={[0, 200]} />
-                        <Radar name="data" dataKey="value" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
+                    <RadarChart outerRadius={100} data={reorderedData}>
+                        <PolarGrid radialLines={false}/>
+                        <PolarAngleAxis 
+                            dataKey="kind" 
+                            tick={{ fill: 'white' }}
+                            fontSize={12}
+                            tickFormatter={(kind) => kindTranslations[kind]} // Translate to French
+                        />
+                        <PolarRadiusAxis axisLine={false} tick={false}/> {/* Hides the radius axis */}
+                        <Radar 
+                            name="data" 
+                            dataKey="value" 
+                            stroke="#FF0101" 
+                            fill="#FF0101" 
+                            fillOpacity={0.7} 
+                        />
                     </RadarChart>
                 </ResponsiveContainer>
             </div>
-
         </div>
     );
 };
