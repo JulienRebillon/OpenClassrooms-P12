@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 #graph1 {
@@ -17,4 +18,36 @@
 .miniGraph {
     width: 268px;
     height: 253px;
+    position: relative;
+}
+
+.lineChart_tooltip {
+    padding: 5px;
+    min-width: 40px;
+    background-color: white;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 12px;
+    position: absolute;
+    transform: translate(-50%, -100%); /* Move tooltip above and centered on the x-axis */
+    pointer-events: none; /* Prevent tooltip from blocking mouse events */
+}
+
+.lineChart_overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    
+}
+
+.lineChart_legend {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    font-size: 14px;
+    font-weight: 300;
 }
