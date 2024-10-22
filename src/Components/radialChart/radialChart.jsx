@@ -11,8 +11,6 @@ import {
     RadialBarChart,
     ResponsiveContainer,
     Tooltip,
-    XAxis,
-    YAxis,
   } from "recharts";
 
 import './radialChart.css';

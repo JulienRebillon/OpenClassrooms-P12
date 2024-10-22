@@ -22,7 +22,7 @@ main {
 }
 
 .aside_container {
-    margin-top: 280px;
+    margin-top: 270px;
     margin-left: 30px;
     width: 258px;
     height: 570px;
@@ -42,4 +42,11 @@ main {
 .charts_container {
     display: flex;
     height: 263px;
+}
+
+#switch {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    font-size: 18px;
 }
