@@ -59,7 +59,7 @@ const Profile = () => {
 
     // Transform activity data for MainChart
     const activityData = data.activityData ? data.activityData.sessions.map(session => ({
-        day: session.day.split('-')[2], // Extract day from date
+        day: session.day.split('-')[2] % 10, // Extract day from date
         kilogram: session.kilogram,
         calories: session.calories,
     })) : [];

@@ -6,6 +6,11 @@ import React from "react";
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import './lineChart.css';
 
+// Custom YAxis component that handles default parameters
+const CustomYAxis = ({ hide = true, domain = [0, (max) => max * 1.33], dataKey, ...props }) => (
+    <YAxis hide={hide} domain={domain} dataKey={dataKey} {...props} />
+);
+
 const SimpleLineChart = ({ sessions }) => {
     const dayLabels = ["", "L", "M", "M", "J", "V", "S", "D"]; // Days of the week (empty string to match index with 'day' value)
 
@@ -67,7 +72,7 @@ const SimpleLineChart = ({ sessions }) => {
                             fontWeight={300}
                             tickFormatter={(day) => dayLabels[day]} // Maps the numbers to day initials
                         />
-                        <YAxis hide={true} domain={[0, (max) => max * 1.33]} dataKey="sessionLength"/>
+                        {/* <YAxis hide={true} domain={[0, (max) => max * 1.33]} dataKey="sessionLength"/> */}
                         <Tooltip content={<CustomTooltip />} />
                         <Line type="monotone" dataKey="sessionLength" stroke="white" strokeWidth={2} dot={false} />
                     </LineChart>
