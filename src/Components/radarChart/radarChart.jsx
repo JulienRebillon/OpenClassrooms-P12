@@ -1,11 +1,6 @@
 'use client';
 
-// import { fetchUserData,
-//          fetchUserActivity,
-//          fetchUserAverageSessions,
-//          fetchUserPerformance } from '../Data/api';
-
-import React, { useState } from "react";
+import React from "react";
 import {
     Radar,
     RadarChart,
@@ -13,40 +8,11 @@ import {
     PolarAngleAxis,
     PolarRadiusAxis,
     ResponsiveContainer,
-  } from "recharts";
+} from "recharts";
 
 import './radarChart.css';
 
-
-
-const fakeData3 = [
-    {
-      value: 80,
-      kind: "cardio"
-    },
-    {
-      value: 120,
-      kind: "energy"
-    },
-    {
-      value: 140,
-      kind: "endurance"
-    },
-    {
-      value: 50,
-      kind: "strength"
-    },
-    {
-      value: 200,
-      kind: "speed"
-    },
-    {
-      value: 90,
-      kind: "intensity"
-    }
-  ];
-
-
+// Translations for activity kinds
 const kindTranslations = {
     cardio: "Cardio",
     energy: "Énergie",
@@ -56,19 +22,21 @@ const kindTranslations = {
     intensity: "Intensité",
 };
 
-// Rearranging the data in counter-clockwise order
-const reorderedData = [
-    fakeData3[5], // intensity
-    fakeData3[4], // speed
-    fakeData3[3], // strength
-    fakeData3[2], // endurance
-    fakeData3[1], // energy
-    fakeData3[0]  // cardio
-];
+const SimpleRadarChart = ({ performanceData }) => {
+    if (!performanceData || performanceData.length === 0) {
+        return null; // Render nothing if no data
+    }
 
+    // Rearrange data to match desired order: intensity, speed, strength, endurance, energy, cardio
+    const reorderedData = [
+        performanceData[5], // intensity
+        performanceData[4], // speed
+        performanceData[3], // strength
+        performanceData[2], // endurance
+        performanceData[1], // energy
+        performanceData[0]  // cardio
+    ];
 
-
-const SimpleRadarChart = () => {
     return (
         <div className="graphs_content">
             <div className="miniGraph" id="graph2">
