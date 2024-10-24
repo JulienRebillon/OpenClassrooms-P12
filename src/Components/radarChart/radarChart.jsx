@@ -23,8 +23,9 @@ const kindTranslations = {
 };
 
 const SimpleRadarChart = ({ performanceData }) => {
+    console.log('Performance Data radarchart:', performanceData); // Debug line
     if (!performanceData || performanceData.length === 0) {
-        return null; // Render nothing if no data
+        return <div>radarChart: No performance data available.</div>; // Render a message instead of null
     }
 
     // Rearrange data to match desired order: intensity, speed, strength, endurance, energy, cardio
