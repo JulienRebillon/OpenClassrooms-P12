@@ -12,10 +12,13 @@
 
 .sideBar_icons {
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sideBar_icons img {
-    width: 70px;
+    width: 46px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -23,12 +26,12 @@
 
 .sideBar_content p {
     position: absolute;
-    font-size: 13px;
+    font-size: 12px;
     margin: 0;
     width: 250px;
     
-    bottom: 130px;
-    left: -70px;
+    bottom: 100px;
+    left: -85px;
     color: white;
     transform: rotate(270deg);
 }

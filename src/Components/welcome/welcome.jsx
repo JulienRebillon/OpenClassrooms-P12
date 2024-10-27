@@ -8,7 +8,8 @@ const Welcome = ({ firstName }) => { // Accept firstName as a prop
     <div className="welcome_content">
         <h1>Bonjour <span>{firstName}</span></h1>
         
-        <p>Félicitation ! Vous avez explosé vos objectifs hier<span><img src={clap} alt="Icone Clapping hands" className="clapIcon"/></span></p>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier<span><img src={clap}
+         alt="Icone Clapping hands" className="clapIcon"/></span></p>
     </div>
   );
 };

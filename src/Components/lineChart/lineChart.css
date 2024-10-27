@@ -16,8 +16,8 @@
 }
 
 .miniGraph {
-    width: 268px;
-    height: 253px;
+    width: 30%;
+    height: 100%;
     position: relative;
 }
 
@@ -42,12 +42,12 @@
 
 .lineChart_legend {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 12px;
+    left: 12px;
     color: white;
     display: flex;
     flex-direction: column;
     z-index: 999;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
 }

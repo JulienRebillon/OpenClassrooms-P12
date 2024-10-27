@@ -4,8 +4,6 @@ import { fetchUserData } from '../../API/api';
 import './home.css';
 import Header from "../../Components/header/header";
 
-
-
 const Home = () => {
 
     const navigate = useNavigate(); // Initialize the navigate function
@@ -13,20 +11,7 @@ const Home = () => {
     const goToProfile = (id) => {
         navigate(`/profile/${id}`); // Redirect to the profile page with the selected user ID
     };
-    // const goToProfile = async (userId) => {
-    //     try {
-    //       const userData = await fetchUserData(userId);
-          
-    //       // Store the fetched data in sessionStorage
-    //       sessionStorage.setItem('selectedUserData', JSON.stringify(userData));
-    
-    //       // Navigate to the Profile page
-    //       navigate(`/profile`);
-
-    //     } catch (error) {
-    //       console.error('Error fetching user data:', error);
-    //     }
-    //   };
+   
 
     return <div>
         <>

@@ -10,7 +10,7 @@ const Error = () => {
         <>
             <Header />
             <div className="error_container">
-                <h1>404</h1>
+                <h1 className="error_h1">404</h1>
                 <p className="error_p">Erreur au chargement de la page</p>
                 <Link to="/">Retour à la page d'acceuil</Link>
             </div>

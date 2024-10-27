@@ -6,6 +6,7 @@
     justify-content: space-between;
     padding: 0 20px;
     z-index: 10;
+    max-width: 1440px;
   }
   
   .header__logo img {
@@ -13,7 +14,7 @@
   }
 
   .header__nav {
-    width: 1000px;
+    width: 70%;
     margin-right: 30px;
   }
   
@@ -22,7 +23,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    gap: 20px;
+    gap: 15px;
     margin: 0;
     padding: 0;
   }
@@ -34,7 +35,7 @@
   .header__nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
   }
   
   .header__nav ul li a:hover {

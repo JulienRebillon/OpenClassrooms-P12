@@ -22,8 +22,8 @@ const SimpleRadialChart = ({ todayScore }) => {
             <div className="miniGraph" id="graph3">
                 <ResponsiveContainer width="100%" height="100%">
                     <RadialBarChart
-                        innerRadius="70%" // Adjust the inner radius for the hole in the center
-                        outerRadius="90%" // Adjust the outer radius to control the size
+                        innerRadius="75%" 
+                        outerRadius="90%" 
                         barSize={15} // Thickness of the bars
                         data={[
                             { name: 'Score', value: scorePercentage }, // User score
@@ -46,7 +46,7 @@ const SimpleRadialChart = ({ todayScore }) => {
                             textAnchor="middle"
                             dominantBaseline="middle"
                             className="progress-label"
-                            style={{ fontSize: '28px', fontWeight: 'bold' }}
+                            style={{ fontSize: '24px', fontWeight: 'bold' }}
                         >
                             {`${scorePercentage}%`}
                         </text>

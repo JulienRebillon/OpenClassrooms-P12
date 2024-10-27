@@ -42,12 +42,12 @@ const SimpleRadarChart = ({ performanceData }) => {
         <div className="graphs_content">
             <div className="miniGraph" id="graph2">
                 <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart outerRadius={100} data={reorderedData}>
+                    <RadarChart outerRadius={65} data={reorderedData}>
                         <PolarGrid radialLines={false}/>
                         <PolarAngleAxis 
                             dataKey="kind" 
                             tick={{ fill: 'white' }}
-                            fontSize={12}
+                            fontSize={10}
                             tickFormatter={(kind) => kindTranslations[kind]} // Translate to French
                         />
                         <PolarRadiusAxis axisLine={false} tick={false}/> {/* Hides the radius axis */}

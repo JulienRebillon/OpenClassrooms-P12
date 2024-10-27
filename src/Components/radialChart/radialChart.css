@@ -1,5 +1,5 @@
 .graphs_content {
-    width: 100%;
+    width: 30%;
     display: flex;
     justify-content: space-between;
 }
@@ -15,8 +15,8 @@
 }
 
 .miniGraph {
-    width: 268px;
-    height: 253px;
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 
@@ -29,5 +29,5 @@
     color: #282D30;
     display: flex;
     flex-direction: column;
-    font-size: 18px;
+    font-size: 14px;
 }

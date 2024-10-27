@@ -7,7 +7,7 @@
 }
 
 .aside_card {
-    padding: 32px;
+    padding: 24px;
     display: flex;
     background-color: #FBFBFB;
 
@@ -19,8 +19,8 @@
 }
 
 .aside_card img {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
 }
 
 .aside_desc {
@@ -28,7 +28,7 @@
 }
 
 .aside_desc_Value {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 600;
 }
 
