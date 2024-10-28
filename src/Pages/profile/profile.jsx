@@ -140,7 +140,6 @@ const Profile = ({ isMock }) => {
 
 
 
-
     // Transform todayScore for SimpleRadialChart
     const todayScore = userData?.todayScore || userData?.score || 0;
 
