@@ -7,9 +7,9 @@ import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "rec
 import './lineChart.css';
 
 // Custom YAxis component that handles default parameters
-// const CustomYAxis = ({ hide = true, domain = [0, (max) => max * 1.33], dataKey, ...props }) => (
-//     <YAxis hide={hide} domain={domain} dataKey={dataKey} {...props} />
-// );
+const CustomYAxis = ({ hide = true, domain = [0, (max) => max * 1.33], dataKey, ...props }) => (
+    <YAxis hide={hide} domain={domain} dataKey={dataKey} {...props} />
+);
 
 const SimpleLineChart = ({ sessions }) => {
     const dayLabels = ["", "L", "M", "M", "J", "V", "S", "D"]; // Days of the week (empty string to match index with 'day' value)
