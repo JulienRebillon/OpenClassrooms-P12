@@ -1,10 +1,11 @@
-// // src/Pages/profile/profile.jsx
+
 
 // import React, { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
 // import './profile.css';
 
-// import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from '../../Data/data'; // Mock data
+// import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS } from '../../Data/data'; // Mock data
+// import userPerformanceData from '../../Data/userPerformance.json'; // Import the new JSON data
 // import { fetchUserData, fetchUserActivity, fetchUserAverageSessions, fetchUserPerformance } from '../../API/api';
 
 // import SideBar from "../../Components/sidebar/sidebar";
@@ -21,50 +22,8 @@
 //     return data.data ? data.data : data;
 // };
 
-
-// // // Helper function to transform performance data safely
-// // const transformPerformanceData = (performance) => {
-// //     if (!performance || !Array.isArray(performance.data) || !performance.kind) {
-// //         console.error("Performance data is missing or incomplete:", performance);
-// //         return []; // Return empty array if data is missing
-// //     }
-
-// //     return performance.data.map(item => ({
-// //         kind: performance.kind[item.kind] || "Unknown", // Provide a default if kind is missing
-// //         value: item.value
-// //     }));
-// // };
-
-// console.log("Mock USER_PERFORMANCE data:", USER_PERFORMANCE);
-
 // // Helper function to transform performance data safely
-// // const transformPerformanceData = (performance) => {
-// //     if (!performance) {
-// //         console.error("Performance data is missing:", performance);
-// //         return { userId: null, kind: {}, data: [] }; // Return empty structure if no data
-// //     }
-
-// //     const { userId = null, kind = {}, data = [] } = performance; // Destructure with default values
-
-// //     if (!Array.isArray(data) || data.some(item => item.kind === undefined || item.value === undefined)) {
-// //         console.error("Performance data is missing or incomplete:", performance);
-// //         return { userId, kind, data: [] }; // Return empty data array if items are incomplete
-// //     }
-
-// //     return {
-// //         userId,
-// //         kind,
-// //         data: data.map(item => ({
-// //             kind: item.kind,
-// //             value: item.value
-// //         }))
-// //     };
-// // };
-
-
-// //Helper function to transform performance data safely
 // const transformPerformanceData = (performance) => {
-//     console.log("test performance contenu", performance);
 //     if (
 //         !performance || 
 //         !Array.isArray(performance.data) || 
@@ -84,9 +43,6 @@
 //     };
 // };
 
-
-
-
 // const Profile = ({ isMock }) => {
 //     const { id: userId } = useParams();
 //     const [userData, setUserData] = useState(null);
@@ -96,50 +52,6 @@
 //     const [useMock, setUseMock] = useState(isMock);
 //     const [error, setError] = useState(null);
 
-//     // useEffect(() => {
-//     //     if (userId) {
-//     //         if (useMock) {
-//     //             // Mock data fetching logic
-//     //             const userData = extractData(USER_MAIN_DATA.find(user => user.id === parseInt(userId)));
-//     //             setUserData(userData);
-                
-//     //             const activity = extractData(USER_ACTIVITY.find(user => user.userId === parseInt(userId)));
-//     //             setActivityData(activity);
-                
-//     //             const averageSessions = extractData(USER_AVERAGE_SESSIONS.find(user => user.userId === parseInt(userId)));
-//     //             setAverageSessionsData(averageSessions);
-                
-//     //             // const rawPerformanceData = extractData(USER_PERFORMANCE.find(user => user.userId === parseInt(userId)));
-//     //             // setPerformanceData(transformPerformanceData(rawPerformanceData));
-                
-//     //             const rawPerformanceData = extractData(USER_PERFORMANCE.find(user => user.userId === parseInt(userId)));
-//     //             const transformedPerformanceData = transformPerformanceData(rawPerformanceData);
-                
-
-//     //             console.log("Transformed Performance Data:", transformedPerformanceData);
-//     //             setPerformanceData(transformedPerformanceData);
-
-//     //         } else {
-//     //             const fetchData = async () => {
-//     //                 try {
-//     //                     const user = await fetchUserData(userId);
-//     //                     setUserData(extractData(user));
-                        
-//     //                     const activity = await fetchUserActivity(userId);
-//     //                     setActivityData(extractData(activity));
-                        
-//     //                     const averageSessions = await fetchUserAverageSessions(userId);
-//     //                     setAverageSessionsData(extractData(averageSessions));
-                        
-//     //                     const performance = await fetchUserPerformance(userId);
-//     //                     setPerformanceData(transformPerformanceData(extractData(performance)));
-//     //                 } catch (err) {
-//     //                     setError("Failed to load data. Please try again later.");
-//     //                 }
-//     //             };
-//     //             fetchData();
-//     //         }
-//     //     }
 //     useEffect(() => {
 //         if (userId) {
 //             if (useMock) {
@@ -153,27 +65,26 @@
 //                 const averageSessions = extractData(USER_AVERAGE_SESSIONS.find(user => user.userId === parseInt(userId)));
 //                 setAverageSessionsData(averageSessions);
 
-//                 // Handle performance data
-//                 const performance = extractData(USER_PERFORMANCE.find(user => user.userId === parseInt(userId)));
-//                 console.log("Performance Before Transformation:", performance); // Log raw performance data
+//                 // Extract performance data from the JSON file
+//                 const performance = userPerformanceData.find(user => user.userId === parseInt(userId));
+//                 console.log("Performance Mock Before Transformation:", performance); // Log raw performance data
 //                 const transformedPerformanceData = transformPerformanceData(performance);
-//                 console.log("Transformed Performance Data:", transformedPerformanceData); // Log transformed data
+//                 console.log("Transformed Mock Performance Data:", transformedPerformanceData); // Log transformed data
 //                 setPerformanceData(transformedPerformanceData);
-    
+
 //             } else {
 //                 // Fetching data from API logic
 //                 const fetchData = async () => {
 //                     try {
 //                         const user = await fetchUserData(userId);
 //                         setUserData(extractData(user));
-    
+
 //                         const activity = await fetchUserActivity(userId);
 //                         setActivityData(extractData(activity));
-    
+
 //                         const averageSessions = await fetchUserAverageSessions(userId);
 //                         setAverageSessionsData(extractData(averageSessions));
-    
-//                         // Use performance instead of rawPerformanceData
+
 //                         const performance = await fetchUserPerformance(userId);
 //                         setPerformanceData(transformPerformanceData(extractData(performance)));
 //                     } catch (err) {
@@ -183,14 +94,6 @@
 //                 fetchData();
 //             }
 //         }
-    
-    
-
-
-
-
-
-
 //     }, [userId, useMock]);
 
 //     if (error) {
@@ -264,18 +167,11 @@
 // export default Profile;
 
 
-
-//-----------------------
-
-// src/Pages/profile/profile.jsx
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './profile.css';
 
-import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS } from '../../Data/data'; // Mock data
-import userPerformanceData from '../../Data/userPerformance.json'; // Import the new JSON data
-import { fetchUserData, fetchUserActivity, fetchUserAverageSessions, fetchUserPerformance } from '../../API/api';
+import { getUserData, getActivityData, getAverageSessionsData, getPerformanceData } from '../../Service/service';
 
 import SideBar from "../../Components/sidebar/sidebar";
 import Aside from "../../Components/aside/aside";
@@ -285,32 +181,6 @@ import MainChart from "../../Components/mainChart/mainChart";
 import SimpleLineChart from "../../Components/lineChart/lineChart";
 import SimpleRadarChart from "../../Components/radarChart/radarChart";
 import SimpleRadialChart from "../../Components/radialChart/radialChart";
-
-// Helper function to extract data safely
-const extractData = (data) => {
-    return data.data ? data.data : data;
-};
-
-// Helper function to transform performance data safely
-const transformPerformanceData = (performance) => {
-    if (
-        !performance || 
-        !Array.isArray(performance.data) || 
-        performance.data.some(item => item.kind === undefined || item.value === undefined)
-    ) {
-        console.error("Performance data is missing or incomplete:", performance);
-        return { userId: performance.userId || null, kind: performance.kind || {}, data: [] }; // Return empty structure if data is missing
-    }
-
-    return {
-        userId: performance.userId, // Keep the userId
-        kind: performance.kind,     // Keep the kind mapping
-        data: performance.data.map(item => ({
-            kind: item.kind,
-            value: item.value
-        }))
-    };
-};
 
 const Profile = ({ isMock }) => {
     const { id: userId } = useParams();
@@ -323,47 +193,28 @@ const Profile = ({ isMock }) => {
 
     useEffect(() => {
         if (userId) {
-            if (useMock) {
-                // Mock data fetching logic
-                const userData = extractData(USER_MAIN_DATA.find(user => user.id === parseInt(userId)));
-                setUserData(userData);
-
-                const activity = extractData(USER_ACTIVITY.find(user => user.userId === parseInt(userId)));
-                setActivityData(activity);
-
-                const averageSessions = extractData(USER_AVERAGE_SESSIONS.find(user => user.userId === parseInt(userId)));
-                setAverageSessionsData(averageSessions);
-
-                // Extract performance data from the JSON file
-                const performance = userPerformanceData.find(user => user.userId === parseInt(userId));
-                console.log("Performance Mock Before Transformation:", performance); // Log raw performance data
-                const transformedPerformanceData = transformPerformanceData(performance);
-                console.log("Transformed Mock Performance Data:", transformedPerformanceData); // Log transformed data
-                setPerformanceData(transformedPerformanceData);
-
-            } else {
-                // Fetching data from API logic
-                const fetchData = async () => {
-                    try {
-                        const user = await fetchUserData(userId);
-                        setUserData(extractData(user));
-
-                        const activity = await fetchUserActivity(userId);
-                        setActivityData(extractData(activity));
-
-                        const averageSessions = await fetchUserAverageSessions(userId);
-                        setAverageSessionsData(extractData(averageSessions));
-
-                        const performance = await fetchUserPerformance(userId);
-                        setPerformanceData(transformPerformanceData(extractData(performance)));
-                    } catch (err) {
-                        setError("Failed to load data. Please try again later.");
-                    }
-                };
-                fetchData();
-            }
+            const fetchData = async () => {
+                try {
+                    const user = await getUserData(userId, useMock);
+                    setUserData(user);
+    
+                    const activity = await getActivityData(userId, useMock);
+                    setActivityData(activity);
+    
+                    const averageSessions = await getAverageSessionsData(userId, useMock);
+                    setAverageSessionsData(averageSessions);
+    
+                    const performance = await getPerformanceData(userId, useMock);
+                    setPerformanceData(performance);
+                } catch (err) {
+                    console.error("Error fetching data:", err);  // Log the error details
+                    setError("Failed to load data. Please try again later.");
+                }
+            };
+            fetchData();
         }
     }, [userId, useMock]);
+    
 
     if (error) {
         return <div className="error-message">{error}</div>;
@@ -372,23 +223,6 @@ const Profile = ({ isMock }) => {
     if (!userData || !activityData || !averageSessionsData || !performanceData) {
         return <div>Loading...</div>;
     }
-
-    // Transform activity data for MainChart
-    const transformedActivityData = activityData && activityData.sessions 
-        ? activityData.sessions.map(session => ({
-            day: session.day.split('-')[2] % 10, 
-            kilogram: session.kilogram,
-            calories: session.calories,
-        })) 
-        : [];
-
-    // Transform average sessions data for SimpleLineChart
-    const sessionsData = averageSessionsData && averageSessionsData.sessions 
-        ? averageSessionsData.sessions.map(session => ({
-            day: session.day,
-            sessionLength: session.sessionLength,
-        })) 
-        : [];
 
     // Transform todayScore for SimpleRadialChart
     const todayScore = userData?.todayScore || userData?.score || 0;
@@ -407,12 +241,12 @@ const Profile = ({ isMock }) => {
                         )}
                     </div>
                     <div className="mainChart_container">
-                        <MainChart data={transformedActivityData} /> 
+                        <MainChart data={activityData} />
                     </div>
                     <div className="charts_container">
-                        <SimpleLineChart sessions={sessionsData} /> 
-                        <SimpleRadarChart performanceData={performanceData} /> 
-                        <SimpleRadialChart todayScore={todayScore} /> 
+                        <SimpleLineChart sessions={averageSessionsData} />
+                        <SimpleRadarChart performanceData={performanceData} />
+                        <SimpleRadialChart todayScore={todayScore} />
                     </div>
                 </div>
                 <aside className="aside_container">
